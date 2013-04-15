@@ -23,7 +23,7 @@
 //   5. (optionally) call old method using CHSuper()
 
 #define PreferencesPlist @"/var/mobile/Library/Preferences/me.qusic.drunkmode.plist"
-#define DrunkModeKey @"DrunkMode"
+#define DrunkModeKey @"喝大了模式"
 
 static BOOL getDrunkMode()
 {
@@ -42,10 +42,10 @@ CHDeclareClass(CKTranscriptController)
 CHOptimizedMethod(1, self, void, CKTranscriptController, messageEntryViewSendButtonHit, id, messageEntryView)
 {
     if (getDrunkMode()) {
-        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Drunk Mode"
-                                                           message:@"Go Home, You Are Drunk!"
+        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"你确定要这样发吗？！"
+                                                           message:@"喝大了模式已开启。信息人性化截留，请酒醒后查看"
                                                           delegate:nil
-                                                 cancelButtonTitle:@"What?"
+                                                 cancelButtonTitle:@"接着喝"
                                                  otherButtonTitles:nil];
         [alertView show];
     } else {
